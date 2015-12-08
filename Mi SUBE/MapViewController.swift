@@ -9,6 +9,7 @@
 import UIKit
 import MapKit
 import CoreLocation
+import MediumMenu
 
 class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
     
@@ -47,6 +48,13 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         //Los detalles deben arrancar oculto
         self.constraintDetalle.constant = -500
         // let gradientLayerView: UIView = UIView(frame: CGRectMake(0, 0, view.bounds.width, view.bounds.height))
+        
+        // MediumMenu implementation
+//        let itemAbout = MediumMenuItem(title: "About", completion: <#T##completionHandler##completionHandler##() -> Void#>)
+//        
+//        let menu = MediumMenu(items: [itemMapa, itemFav, itemAbout], forViewController: self)
+//        
+        
     }
     
     override func didReceiveMemoryWarning() {
