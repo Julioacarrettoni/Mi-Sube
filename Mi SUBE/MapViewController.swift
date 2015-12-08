@@ -255,7 +255,9 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
     @IBAction func tabMenuUbicar(sender: AnyObject){
         self.manejarMenuUbicarme()
+        if self.buttonMenuHam.alpha == 0 {
         self.manejarMenuHam()
+        }
     }
     
     //MARK: Botonera Ubicarme
