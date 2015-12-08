@@ -28,6 +28,17 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     @IBOutlet weak var selectedPointType: UILabel!
     @IBOutlet weak var selectedPointCostCharge: UILabel!
     
+    //MARK: Outlets Menu Hamburguesa
+    
+    @IBOutlet var constraintBotonMenuHam: NSLayoutConstraint!
+    
+    @IBOutlet var buttonMenuHam: UIButton!
+    
+    @IBOutlet var menuHam: UIView!
+    
+    @IBOutlet var constraintMenuHam: NSLayoutConstraint!
+    
+    
     
     //MARK: Variables de la clase
     var manager: CLLocationManager!
@@ -46,7 +57,10 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         //Los detalles deben arrancar oculto
         self.constraintDetalle.constant = -500
         // let gradientLayerView: UIView = UIView(frame: CGRectMake(0, 0, view.bounds.width, view.bounds.height))
-        
+        // Oculto navigationbar
+        self.navigationController?.navigationBarHidden = true
+        // Oculto Menu Hamburguesa
+        self.constraintMenuHam.constant = -500
 
     
     }
@@ -241,6 +255,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
     @IBAction func tabMenuUbicar(sender: AnyObject){
         self.manejarMenuUbicarme()
+        self.manejarMenuHam()
     }
     
     //MARK: Botonera Ubicarme
@@ -256,7 +271,36 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         mapa.addAnnotation(pinFactory.makeCustomMarker(miPunto))
     }
     
+    
+    //MARK: Boton mostrar Menu Hamburguesa
+    
+    
+    @IBAction func mostrarMenuHam() {
+          self.manejarMenuHam()
+    }
+    
     //MARK: Funciones generales
+    
+    
+    func manejarMenuHam()
+    
+    {
+        
+        UIView.animateWithDuration(0.5, delay: 0.0, usingSpringWithDamping: 1, initialSpringVelocity: 1.5, options: UIViewAnimationOptions.CurveEaseIn, animations: { () -> Void in
+            if self.constraintMenuHam.constant != -20{
+                self.constraintMenuHam.constant = -20
+                self.mapa.alpha = 0.5
+                self.buttonMenuHam.alpha = 0
+            }else
+            {
+                self.constraintMenuHam.constant = -500
+                self.mapa.alpha = 1
+                self.buttonMenuHam.alpha = 1
+            }
+            self.view.layoutIfNeeded()
+            }, completion: nil)
+
+    }
     
     func manejarMenuUbicarme()
     {
