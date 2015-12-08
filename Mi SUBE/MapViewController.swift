@@ -47,8 +47,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         self.constraintDetalle.constant = -500
         // let gradientLayerView: UIView = UIView(frame: CGRectMake(0, 0, view.bounds.width, view.bounds.height))
         
-
-    
+        // MediumMenu
     }
     
     override func didReceiveMemoryWarning() {
