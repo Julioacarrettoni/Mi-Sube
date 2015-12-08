@@ -23,6 +23,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     //MARK: OutletsDetail
     @IBOutlet weak var closeButton: UIButton!
     @IBOutlet weak var selectedPointDirection: UILabel!
+    @IBOutlet weak var selectedPointDistance: UILabel!
     @IBOutlet weak var selectedPointHours: UILabel!
     @IBOutlet weak var selectedPointSellSube: UILabel!
     @IBOutlet weak var selectedPointType: UILabel!
@@ -46,8 +47,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         //Los detalles deben arrancar oculto
         self.constraintDetalle.constant = -500
         // let gradientLayerView: UIView = UIView(frame: CGRectMake(0, 0, view.bounds.width, view.bounds.height))
-        
-        // MediumMenu
     }
     
     override func didReceiveMemoryWarning() {
@@ -104,8 +103,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             mapa.setRegion(region, animated: false)
             
             if (self.mapa.annotations.count < 2 || (self.miUbicacion?.coordinate.latitude != location.coordinate.latitude && self.miUbicacion?.coordinate.longitude != location.coordinate.longitude) ){
-            self.miUbicacion = MiUbicacion(lat: location.coordinate.latitude,lon: location.coordinate.longitude)
-            obtenerPuntosDeCargas()
+                self.miUbicacion = MiUbicacion(lat: location.coordinate.latitude,lon: location.coordinate.longitude)
+                obtenerPuntosDeCargas()
             }
         }
     }
@@ -133,10 +132,14 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             self.mapa.setRegion(region, animated: true)
             self.view.layoutIfNeeded()
             self.closeButton.alpha = 1
-        }, completion: nil)
+            }, completion: nil)
         
         // seteamos los datos en el detalle
         self.selectedPointDirection.text = cpa.datos.address
+        
+        let distancia = round((miUbicacion?.getDistanciaAPuntoCarga(cpa.datos))!)
+        
+        self.selectedPointDistance.text = "\(distancia) metros"
         
         if cpa.datos.estaAbierto() {
             self.selectedPointHours.text = "\(cpa.datos.getHorarioDeAtencion()), Abierto ahora"
@@ -152,13 +155,10 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         
         if cpa.datos.cobraPorCargar(){
             self.selectedPointCostCharge.text = "Si"
-        }else
-        {
+        } else {
             self.selectedPointCostCharge.text = "No"
-        
+            
         }
-        
-        var distancia = miUbicacion?.getDistanciaAPuntoCarga(cpa.datos)
         
         self.selectedPointType.text = cpa.datos.type
         
@@ -175,20 +175,20 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             blurEffectView.tag = 3000 //le pongo este tag para no crearlo varias veces
             
             self.detailView.addSubview(blurEffectView)
-
+            
         }
         
         
-//        //Prueba de agregar un punto
-//        let service: DondeCargoService
-//        service = DondeCargoService()
-//        
-//        cpa.datos.idType = 1
-//        
-//        service.agregarPuntoCarga(cpa.datos, completionHandler: {(response: Bool) -> () in
-//            print("response = \(response)")
-//        
-//        })
+        //        //Prueba de agregar un punto
+        //        let service: DondeCargoService
+        //        service = DondeCargoService()
+        //
+        //        cpa.datos.idType = 1
+        //
+        //        service.agregarPuntoCarga(cpa.datos, completionHandler: {(response: Bool) -> () in
+        //            print("response = \(response)")
+        //
+        //        })
         
     }
     
@@ -229,7 +229,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         
         
         return anView
-
+        
     }
     //MARK: Cerrar detalle
     @IBAction func closeDetail() {
