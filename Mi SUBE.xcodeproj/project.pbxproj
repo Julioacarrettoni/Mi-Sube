@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		7C1FCE9C1C16A531003AAFB4 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1FCE9B1C16A531003AAFB4 /* AboutViewController.swift */; };
 		7C1FCE9E1C16A675003AAFB4 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1FCE9D1C16A675003AAFB4 /* BaseViewController.swift */; };
+		7C1FCEA01C16AA94003AAFB4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C1FCE9F1C16AA94003AAFB4 /* Assets.xcassets */; };
+		7C1FCEA21C16AD41003AAFB4 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1FCEA11C16AD41003AAFB4 /* NavigationController.swift */; };
 		E49BECD2AE12793DABC79FAA /* Pods_Mi_SUBE.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DF6EF055EE3131AD7114A71 /* Pods_Mi_SUBE.framework */; };
 		EC5B5BE41C14972200327D19 /* MarkerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5B5BE31C14972200327D19 /* MarkerFactory.swift */; };
 		EC5B5BE61C14980600327D19 /* CustomPointAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5B5BE51C14980600327D19 /* CustomPointAnnotation.swift */; };
@@ -32,6 +34,8 @@
 		790EDDA4CE9AE64F2C29F11F /* Pods-Mi SUBE.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mi SUBE.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Mi SUBE/Pods-Mi SUBE.debug.xcconfig"; sourceTree = "<group>"; };
 		7C1FCE9B1C16A531003AAFB4 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		7C1FCE9D1C16A675003AAFB4 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		7C1FCE9F1C16AA94003AAFB4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7C1FCEA11C16AD41003AAFB4 /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		EC5B5BE31C14972200327D19 /* MarkerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkerFactory.swift; sourceTree = "<group>"; };
 		EC5B5BE51C14980600327D19 /* CustomPointAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPointAnnotation.swift; sourceTree = "<group>"; };
 		EC83B4BB1C13A5C300B9E6AA /* Congreso.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = Congreso.gpx; path = ../Congreso.gpx; sourceTree = "<group>"; };
@@ -129,6 +133,7 @@
 				ECC647C81C1282AE00896171 /* Controllers */,
 				ECC647B61C12822600896171 /* AppDelegate.swift */,
 				ECC647BA1C12822600896171 /* Main.storyboard */,
+				7C1FCE9F1C16AA94003AAFB4 /* Assets.xcassets */,
 				ECC647BF1C12822600896171 /* LaunchScreen.storyboard */,
 				ECC647C21C12822600896171 /* Info.plist */,
 			);
@@ -141,6 +146,7 @@
 				ECC647B81C12822600896171 /* MapViewController.swift */,
 				7C1FCE9B1C16A531003AAFB4 /* AboutViewController.swift */,
 				7C1FCE9D1C16A675003AAFB4 /* BaseViewController.swift */,
+				7C1FCEA11C16AD41003AAFB4 /* NavigationController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -237,6 +243,7 @@
 				EC83B4BC1C13A5C300B9E6AA /* Congreso.gpx in Resources */,
 				ECA2E3DB1C13AF9500A6CA6E /* Palermo.gpx in Resources */,
 				ECC647BC1C12822600896171 /* Main.storyboard in Resources */,
+				7C1FCEA01C16AA94003AAFB4 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,6 +302,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C1FCEA21C16AD41003AAFB4 /* NavigationController.swift in Sources */,
 				ECC647D41C12B39100896171 /* Extensions.swift in Sources */,
 				EC94BF9B1C138A3E005A88A2 /* MiUbicacion.swift in Sources */,
 				EC5B5BE61C14980600327D19 /* CustomPointAnnotation.swift in Sources */,

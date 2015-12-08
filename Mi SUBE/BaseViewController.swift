@@ -9,16 +9,13 @@
 import UIKit
 
 class BaseViewController: UIViewController {
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        // Set hamburger icon
+        let icon = UIBarButtonItem(image: UIImage(named: "menu"), style: .Plain, target: navigationController, action: "showMenu")
+        icon.imageInsets = UIEdgeInsetsMake(-10, 0, 0, 0)
+        icon.tintColor = UIColor.blackColor()
+        navigationItem.leftBarButtonItem = icon
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
 }
